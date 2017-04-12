@@ -46,7 +46,8 @@ def readDirectory(fileLocation, cascade):
         image = cv.LoadImage(os.path.join(root,name), 1)
         match = detectFace(image, cascade)
         if match:
-          #save a new image with a box round each face
+          #save a new image with a square around the nose
+          #set the directory
           resultsLocation = '/home/pi/Desktop/results'
           cv.SaveImage( resultsLocation + "/nose_" + name, match)
         t = cv.GetTickCount() -t
